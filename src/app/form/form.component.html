@@ -1,0 +1,24 @@
+<form  [formGroup]="myForm" class="form">
+
+  <div *ngIf="fileds.includes('name')" class="form-item">    
+    <p class="label">Name</p>
+    <input type="text" formControlName="name"> <br>
+    <span *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched" class="text-error">
+        Name field is reqired
+    </span>
+  </div>
+
+   <div *ngIf="fileds.includes('age')" class="form-item">
+    <p class="label">Age</p>
+    <input type="number" formControlName="age"> <br>
+    <span *ngIf="myForm.get('age').hasError('required') && myForm.get('age').touched" class="text-error">
+        Age field is reqired
+    </span>
+  </div>
+
+  <div *ngIf="fileds.includes('profession')" class="form-item">
+    <p class="label">Profession</p>
+    <input type="text" formControlName="profession"> <br>
+  </div>
+
+</form>
